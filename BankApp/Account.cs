@@ -16,8 +16,16 @@ namespace BankApp
         public int AccountNumber { get; set; }
         public string EmailAddress { get; set; }
         public string AccountName { get; set; }
-        public string AcountType { get; set; }
+        public string AccountType { get; set; }
         public decimal Balance { get; set; }
         #endregion
+
+	public Account(int id, string email, string name, string type, decimal balance) {
+		AccountNumber = id;
+		EmailAddress = email;
+		AccountName = name;
+		AccountType = type;
+		Balance = balance;
+	}
     }
 }
