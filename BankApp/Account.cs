@@ -20,12 +20,30 @@ namespace BankApp
         public decimal Balance { get; set; }
         #endregion
 
-	public Account(int id, string email, string name, string type, decimal balance) {
-		AccountNumber = id;
-		EmailAddress = email;
-		AccountName = name;
-		AccountType = type;
-		Balance = balance;
-	}
+	    public Account(int id, string email, string name, string type, decimal balance) {
+	    	AccountNumber = id;
+	    	EmailAddress = email;
+	    	AccountName = name;
+	    	AccountType = type;
+	    	Balance = balance;
+	    }
+
+        public void AddBalance(int amount) {
+            if( amount >= 0 ) {
+                Balance += amount;
+            }
+            else {
+                WithdrawBalance(Math.Abs(amount));
+            }
+        }
+
+        public void WithdrawBalance(int amount) {
+            if( amount >= 0 ) {
+                Balance -= amount;
+            }
+            else {
+                AddBalance(Math.Abs(amount));
+            }
+        }
     }
 }
