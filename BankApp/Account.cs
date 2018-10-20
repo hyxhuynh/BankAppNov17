@@ -27,5 +27,10 @@ namespace BankApp
 		AccountType = type;
 		Balance = balance;
 	}
+
+        public decimal CalculateInterest() {
+            return 0.1 * Balance;
+        }
+    
     }
 }
